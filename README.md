@@ -1,45 +1,37 @@
-# Análise de dados de RNA-seq de câncer de mama
-
-Projeto desenvolvido no contexto de uma dissertação de Mestrado em Matemática Aplicada e Computacional.
-
+# RBras — Análise de dados de RNA-seq de câncer de mama
+ 
 ## Objetivo
-
-Investigar estratégias de redução de dimensionalidade e agrupamento
-não supervisionado em dados de expressão gênica de pacientes com
-câncer de mama (TCGA-BRCA).
-
+Investigar como a filtragem de genes por variabilidade (MAD) influencia
+a redução de dimensionalidade e a identificação de agrupamentos em dados
+de bulk RNA-seq do TCGA-BRCA.
+ 
 ## Métodos
-
-- Variance Stabilizing Transformation (VST)
-- Median Absolute Deviation (MAD)
-- PaCMAP
-- Gaussian Mixture Models (GMM)
-- Otimização de hiperparâmetros com Optuna
-
-## Estratégias investigadas
-
-1. Otimização conjunta de PaCMAP e GMM.
-2. Otimização independente de PaCMAP e GMM.
-
-## Tecnologias utilizadas
-
-- Python
-- NumPy
-- Pandas
-- Scikit-learn
-- PaCMAP
-- Optuna
-- pyDRMetrics
-
-## Estrutura
-
-- `notebooks/`: notebooks de análise e experimentação.
-- `src/`: funções e módulos auxiliares.
-- `requirements.txt`: dependências do projeto.
-
-## Execução
-
-Instale as dependências com:
-
+- Filtragem por MAD: 3.000, 5.000, 10.000 e 20.000 genes
+- PCA: 50 componentes
+- Redução de dimensionalidade: UMAP e PaCMAP
+- Agrupamento: Leiden e HDBSCAN
+- Avaliação: Trustworthiness, Silhouette, ARI e NMI
+- Estabilidade: avaliação dos modelos selecionados em dez sementes
+ 
+## Organização
+- `src/`: funções reutilizáveis
+- `scripts/`: execução das análises
+- `notebooks/`: exploração e visualização
+- `results/figures/`: figuras finais
+ 
+## Dados
+Os dados não estão incluídos neste repositório. Consulte `data/README.md`
+para instruções de obtenção e preparação, respeitando os termos de uso
+e as regras aplicáveis ao TCGA/GDC.
+ 
+## Ambiente
+Crie e ative um ambiente virtual e instale as dependências:
+ 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+python -m pip install -r requirements.txt
+```
+
+## Reprodutibilidade
+Consulte os scripts para parâmetros, sementes aleatórias e critérios
+de seleção dos modelos.

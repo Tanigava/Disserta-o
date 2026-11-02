@@ -1,51 +1,36 @@
-
-# ==================================================
-# Ambiente virtual
-# ==================================================
+# Ambientes virtuais
 .venv/
 venv/
 env/
-
-# ==================================================
-# Dados de entrada e intermediários
-# ==================================================
+ 
+# Dados de expressão e dados clínicos
 data/raw/
 data/processed/
-
-# ==================================================
-# Resultados gerados
-# ==================================================
+*.csv
+*.tsv
+*.txt
+ 
+# Exceções: manter documentação de dados
+!data/README.md
+ 
+# Resultados intermediários e arquivos pesados
 results/optuna/
 results/embeddings/
 results/metrics/
-results/figures/
-
-# ==================================================
-# Arquivos temporários do Python
-# ==================================================
+results/tables/*.csv
+ 
+# Cache Python e Jupyter
 __pycache__/
 *.py[cod]
-
-# ==================================================
-# Jupyter Notebook
-# ==================================================
 .ipynb_checkpoints/
 
-# ==================================================
 # Configurações locais
-# ==================================================
 .vscode/
-
-# ==================================================
-# Arquivos temporários e logs
-# ==================================================
-*.log
-.DS_Store
-Thumbs.db
-
-# ==================================================
-# Arquivos de ambiente e credenciais
-# ==================================================
 .env
 .env.*
 !.env.example
+ 
+# Arquivos temporários do sistema
+*.log
+.DS_Store
+Thumbs.db

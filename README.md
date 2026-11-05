@@ -1,17 +1,13 @@
-# RBras — Análise de dados de RNA-seq de câncer de mama
+# Dissertação de Mestrado — Análise de dados de RNA-seq de câncer de mama
  
 ## Objetivo
-Investigar como a filtragem de genes por variabilidade (MAD) influencia
-a redução de dimensionalidade e a identificação de agrupamentos em dados
-de bulk RNA-seq do TCGA-BRCA.
- 
+Comparar os resultados obtidos ao otimizar a redução de dimensionalidade em conjunto com o agrupamento diante a otimização separada da redução de dimensionalidade e logo em seguida do agrupamento.
+
 ## Métodos
-- Filtragem por MAD: 3.000, 5.000, 10.000 e 20.000 genes
+- Filtragem por MAD: 5.000 genes
 - PCA: 50 componentes
-- Redução de dimensionalidade: UMAP e PaCMAP
-- Agrupamento: Leiden e HDBSCAN
-- Avaliação: Trustworthiness, Silhouette, ARI e NMI
-- Estabilidade: avaliação dos modelos selecionados em dez sementes
+- Redução de dimensionalidade: PaCMAP
+- Agrupamento: GMM
  
 ## Organização
 - `src/`: funções reutilizáveis
